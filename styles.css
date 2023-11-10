@@ -54,15 +54,32 @@ body {
     padding: 10px;
     font-size: 16px;
     cursor: pointer;
-    background-color: #4caf50;
     color: #fff;
     border: none;
     border-radius: 5px;
     outline: none;
 }
 
-.next-btn:hover,
-.know-btn:hover,
+.next-btn {
+    background-color: #45a049;
+}
+
+.know-btn {
+    background-color: #9edd5f;
+}
+
+.reset-btn {
+    background-color: #cc9ad0;
+}
+
+.next-btn:hover {
+    background-color: #f69d33;
+}
+
+.know-btn:hover {
+    background-color: #45a049;
+}
+
 .reset-btn:hover {
     background-color: #45a049;
 }
