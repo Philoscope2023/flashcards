@@ -9,6 +9,7 @@ body {
 
 #flashcard-container {
     text-align: center;
+    overflow: hidden;  /* Empêche le défilement */
 }
 
 .flashcard {
