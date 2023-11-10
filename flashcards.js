@@ -1,7 +1,7 @@
 const flashcards = [
-    { repere: "Repère1", definition: "Définition1" },
-    { repere: "Repère2", definition: "Définition2" },
-    { repere: "Repère3", definition: "Définition3" }
+    { repere: "Intuition", definition: "Génie" },
+    { repere: "Discursif", definition: "Langage" },
+    { repere: "Médiat", definition: "Immédiat" }
 ];
 
 let currentIndex = 0;
