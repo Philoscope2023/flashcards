@@ -1,54 +1,39 @@
-// Liste des cartes avec le recto et le verso
-const cards = [
-    { front: "Question 1", back: "Réponse 1" },
-    { front: "Question 2", back: "Réponse 2" },
-    // Ajoutez d'autres cartes au besoin
+const flashcards = [
+    { repere: "Repère1", definition: "Définition1" },
+    { repere: "Repère2", definition: "Définition2" },
+    { repere: "Repère3", definition: "Définition3" }
 ];
 
-// Mélanger les cartes aléatoirement
-const shuffledCards = shuffleArray(cards);
+let currentIndex = 0;
 
-// Initialiser les piles de cartes
-let masteredCards = [];
-let toReviewCards = shuffledCards.slice(); // Copie des cartes mélangées
-
-// Sélectionner la première carte
-let currentCard = toReviewCards.pop();
-displayCard(currentCard);
-
-// Fonction pour afficher une carte
-function displayCard(card) {
-    document.getElementById('flashcard-front').textContent = card.front;
-    document.getElementById('flashcard-back').textContent = card.back;
+function flipCard() {
+    const card = document.querySelector('.flashcard');
+    card.classList.toggle('flipped');
 }
 
-// Fonction pour gérer le bouton "Suivant"
+function updateCard() {
+    const repereName = document.querySelector('.repere-name');
+    const repereDefinition = document.querySelector('.repere-definition');
+
+    repereName.textContent = flashcards[currentIndex].repere;
+    repereDefinition.textContent = flashcards[currentIndex].definition;
+}
+
 function nextCard() {
-    // Déplacer la carte actuelle dans la pile appropriée
-    const isMastered = confirm("Avez-vous maîtrisé cette carte ?");
-    if (isMastered) {
-        masteredCards.push(currentCard);
-    } else {
-        toReviewCards.unshift(currentCard);
-    }
-
-    // Sélectionner la prochaine carte
-    if (toReviewCards.length > 0) {
-        currentCard = toReviewCards.pop();
-        displayCard(currentCard);
-    } else if (masteredCards.length > 0) {
-        alert("Vous avez maîtrisé toutes les cartes !");
-    } else {
-        alert("Vous avez révisé toutes les cartes !");
-    }
+    const card = document.querySelector('.flashcard');
+    card.classList.remove('flipped');
+    currentIndex = (currentIndex + 1) % flashcards.length;
+    updateCard();
 }
 
-// Fonction pour mélanger un tableau aléatoirement
-function shuffleArray(array) {
-    const shuffled = array.slice();
-    for (let i = shuffled.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-    }
-    return shuffled;
+function knowCard() {
+    // Implement your logic to handle knowing the card
 }
+
+function resetCards() {
+    // Implement your logic to reset the flashcards
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    updateCard();
+});
