@@ -61,7 +61,7 @@ body {
 }
 
 .next-btn {
-    background-color: #45a049;
+    background-color: #f69d33;
 }
 
 .know-btn {
@@ -73,7 +73,7 @@ body {
 }
 
 .next-btn:hover {
-    background-color: #f69d33;
+    background-color: #45a049;
 }
 
 .know-btn:hover {
