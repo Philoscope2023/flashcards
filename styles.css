@@ -5,7 +5,6 @@ body {
     height: 100vh;
     margin: 0;
     background-color: #f0f0f0;
-    overflow: hidden;  /* Empêche le défilement */
 }
 
 #flashcard-container {
@@ -23,6 +22,14 @@ body {
     margin-bottom: 20px;
     display: inline-block;
     perspective: 1000px;
+}
+
+/* Nouvelle règle pour éviter le défilement sur les petits écrans */
+@media (max-width: 600px) {
+    #flashcard-container {
+        overflow-x: hidden;  /* Cacher le défilement horizontal */
+        overflow-y: auto;    /* Permettre le défilement vertical si nécessaire */
+    }
 }
 
 .face {
