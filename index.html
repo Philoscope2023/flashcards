@@ -1,26 +1,39 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartes de Révision Philosophiques</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
-    <script defer src="flashcards.js"></script>
-    <title>Flashcards Philosophiques</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="flashcards.js"></script>
 </head>
 <body>
-    <div class="flashcard-container">
-        <div class="flashcard" onclick="flipCard()">
-            <div class="front">
-                <p class="repere-name">Repère</p>
-            </div>
-            <div class="back">
-                <p class="repere-definition">Définition</p>
-            </div>
+    <div class="container">
+        <div class="card-container">
+            <div class="card" id="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <p class="card-text" id="conceptText">Concept</p>
+                    </div>
+                    <div class="card-back">
+                        <p class="card-text" id="definitionText">Définition</p>
+                    </div>
+                </div>
+            </div>            
         </div>
-        <button class="next-btn" onclick="nextCard()">Suivant</button>
-        <button class="know-btn" onclick="knowCard()">Je connais</button>
-        <button class="reset-btn" onclick="resetCards()">Réinitialiser</button>
+        <div class="buttons">
+            <button id="knowBtn">Je connais !</button>
+            <button id="nextBtn">Suivant</button>
+            <button id="reviewBtn">Je ne maîtrise pas</button>
+        </div>
+        <div class="counters">
+            <p>Concepts maîtrisés: <span id="knowCount">0</span></p>
+            <p>A revoir: <span id="reviewCount">0</span></p>
+        </div>
+        <button id="resetBtn">Réinitialiser</button>
+        <p id="completionMessage">Bravo ! Tu as révisé tous les repères au programme !</p>
     </div>
 </body>
 </html>
