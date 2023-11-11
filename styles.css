@@ -17,6 +17,14 @@ p {
     margin-inline-end: 0px;
 }
 
+#confetti-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 999; /* Assurez-vous que le canva est au-dessus de tous les autres éléments */
+}
+
 .container {
     text-align: center;
 }
