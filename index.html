@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cartes de Révision Philosophiques</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-    <script src="https://cdn.rawgit.com/daniel-lundin/confetti.js/v1.0.0/dist/confetti.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="flashcards.js"></script>
+    <script src="flashcards.js" defer></script>
 </head>
+
 <body>
     <div class="container">
         <div class="card-container">
@@ -22,7 +24,7 @@
                         <p class="card-text" id="definitionText">Définition</p>
                     </div>
                 </div>
-            </div>            
+            </div>
         </div>
         <div class="buttons">
             <button id="knowBtn">Je connais !</button>
@@ -33,16 +35,13 @@
             <p>Concepts maîtrisés : <span id="knowCount">0</span></p>
             <p>Concepts à revoir : <span id="reviewCount">0</span></p>
             <p>Concepts révisés : <span id="revisedCount">0</span> <span style="font-size: 16px; font-weight: bold; color: #3498db; margin-top: 10px;">/ 71</span></p>
-        </div>        
+        </div>
         <button id="resetBtn">Recommencer</button>
         <p id="completionMessage">Bravo ! Tu as révisé tous les repères au programme !</p>
     </div>
 
     <canvas id="confetti-canvas" style="position: fixed; top: 0; left: 0; pointer-events: none;"></canvas>
 
-<script src="https://cdn.rawgit.com/daniel-lundin/confetti.js/v1.0.0/dist/confetti.umd.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script src="flashcards.js"></script>
-    
 </body>
+
 </html>
