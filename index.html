@@ -6,9 +6,6 @@
     <title>Cartes de Révision Philosophiques</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.3.1"></script>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="flashcards.js"></script>
 </head>
 <body>
     <div class="container">
@@ -34,11 +31,15 @@
             <p>Concepts à revoir : <span id="reviewCount">0</span></p>
             <p>Concepts révisés : <span id="revisedCount">0</span> <span style="font-size: 16px; font-weight: bold; color: #3498db; margin-top: 10px;">/ 71</span></p>
         </div>        
-        <button id="resetBtn">Réinitialiser</button>
+        <button id="resetBtn">Recommencer</button>
         <p id="completionMessage">Bravo ! Tu as révisé tous les repères au programme !</p>
     </div>
 
     <canvas id="confetti-canvas" style="position: fixed; top: 0; left: 0; pointer-events: none;"></canvas>
 
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.2.0"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="flashcards.js"></script>
+    
 </body>
 </html>
