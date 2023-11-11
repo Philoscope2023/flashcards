@@ -6,6 +6,15 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    background-color: #f8f8f8;
+}
+
+p {
+    display: block;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
 }
 
 .container {
@@ -13,17 +22,19 @@ body {
 }
 
 .card-container {
-    margin-bottom: 20px;
+    margin-bottom: 35px;
 }
 
 .card {
-    width: 300px;
-    height: 200px;
+    width: 400px;
+    max-width: 90vw;
+    height: 260px;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 0 auto;
     cursor: pointer;
     perspective: 1000px;
+    background-color: #fff;
 }
 
 .card-inner {
@@ -31,8 +42,8 @@ body {
     height: 100%;
     transform-style: preserve-3d;
     transition: transform 0.5s;
+    border-radius: 15px;
 }
-
 
 .card-front,
 .card-back {
@@ -43,12 +54,21 @@ body {
     justify-content: center;
     position: absolute;
     backface-visibility: hidden;
+    border-radius: 15px;
 }
 
 .card-text {
     font-size: 20px;
     font-weight: bold;
     color: #ff6e81;
+}
+
+#definitionText {
+    font-size: 14px;
+    font-weight: bold;
+    color: #1C1C1C;
+    text-align: justify;
+    padding: 16px;
 }
 
 .card-back {
@@ -60,16 +80,51 @@ body {
 }
 
 button {
-    margin: 0 10px;
-    padding: 10px;
+    background-color: #ff6e81;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
     font-size: 16px;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: #d3545f;
+}
+
+#resetBtn {
+    margin-bottom: 15px;
 }
 
 .counters {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
+    flex-direction: column;
+}
+
+#knowCount {
+    font-size: 16px;
+    font-weight: bold;
+    color: #78d11e;
+    margin-top: 10px;
+}
+
+#reviewCount {
+    font-size: 16px;
+    font-weight: bold;
+    color: #dd5f5f;
+    margin-top: 10px;
+}
+
+#revisedCount {
+    font-size: 16px;
+    font-weight: bold;
+    color: #3498db;
+    margin-top: 10px;
 }
 
 #completionMessage {
