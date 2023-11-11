@@ -50,21 +50,29 @@ $(document).ready(function () {
         createConfetti();
     }    
     
-function createConfetti() {
-    const duration = 10 * 1000; // durée de l'explosion en millisecondes (10 secondes ici)
-    const { clientWidth, clientHeight } = document.documentElement;
-
-    const confettiSettings = { target: 'confetti-canvas', clock: duration };
-
-    // Utilisez 'confetti.create' au lieu de 'new confetti.ConfettiGenerator'
-    const confettiInstance = confetti.create(confettiSettings);
-    confettiInstance.render(); // Correction ici
-
-    setTimeout(() => {
-        confettiInstance.clear(); // Correction ici
-        console.log('Confetti cleared.'); // Ajout d'un log pour débogage
-    }, duration);
-}   
+    function createConfetti() {
+        console.log('Creating confetti...'); // Ajout d'un log pour débogage
+    
+        const duration = 10 * 1000; // durée de l'explosion en millisecondes (10 secondes ici)
+    
+        particlesJS("confetti-canvas", {
+            particles: {
+                number: { value: 100 },
+                size: { value: 3 },
+                color: { value: "#ff6e81" },
+                shape: { type: "circle" },
+                move: { direction: "random", speed: 6 },
+                opacity: { value: 0.9, random: true },
+            },
+            interactivity: { events: { onhover: { enable: true, mode: "repulse" } } },
+        });
+    
+        setTimeout(() => {
+            // Clear the confetti effect
+            particlesJS("confetti-canvas", {});
+            console.log('Confetti cleared.'); // Ajout d'un log pour débogage
+        }, duration);
+    }       
 
     function hideCompletionMessage() {
         completionMessage.hide();
