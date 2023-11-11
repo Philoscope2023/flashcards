@@ -19,6 +19,7 @@ $(document).ready(function () {
     let reviewCount = 0;
     let revisedCount = 0;
     let evaluatedCards = [];
+    let buttonClicked = false; // Nouvelle variable pour suivre si un bouton a été cliqué
 
     const card = $('#card');
     const knowBtn = $('#knowBtn');
@@ -78,29 +79,32 @@ $(document).ready(function () {
         completionMessage.hide();
     }
 
-    function showNextCard() {
+    function showCard() {
         if (!completionMessage.is(':visible')) {
-            if (currentCardIndex < concepts.length - 1) {
-                currentCardIndex++;
+            if (buttonClicked) { // Vérifier si un bouton a été cliqué
+                if (currentCardIndex < concepts.length - 1) {
+                    currentCardIndex++;
+                } else {
+                    // Vérifier si toutes les cartes ont été évaluées
+                    if (evaluatedCards.length === concepts.length) {
+                        // Ne rien faire ici, car le message de complétion a déjà été affiché
+                    } else {
+                        // Incrémenter le compteur une dernière fois lorsque le message de complétion s'affiche
+                        revisedCountSpan.text(++revisedCount);
+                        showCompletionMessage();
+                        return;
+                    }
+                }
                 updateCard();
                 hideCompletionMessage();
                 evaluatedCards = [];
                 revisedCountSpan.text(++revisedCount);
-            } else {
-                // Vérifier si toutes les cartes ont été évaluées
-                if (evaluatedCards.length === concepts.length) {
-                    // Ne rien faire ici, car le message de complétion a déjà été affiché
-                } else {
-                    // Incrémenter le compteur une dernière fois lorsque le message de complétion s'affiche
-                    revisedCountSpan.text(++revisedCount);
-                    showCompletionMessage();
-                }
+                // Assurez-vous que la carte affichée est toujours un recto
+                card.removeClass('flipped');
             }
-            // Assurez-vous que la carte affichée est toujours un recto
-            card.removeClass('flipped');
         }
     }
-    
+
     function updateCounters() {
         knowCountSpan.text(knowCount);
         reviewCountSpan.text(reviewCount);
@@ -110,6 +114,8 @@ $(document).ready(function () {
         if (!evaluatedCards.includes(currentCardIndex)) {
             reviewCount++;
             evaluatedCards.push(currentCardIndex);
+            buttonClicked = true; // Marquer que le bouton a été cliqué
+            showCard();
             updateCounters();
         }
     }
@@ -118,6 +124,8 @@ $(document).ready(function () {
         if (!evaluatedCards.includes(currentCardIndex)) {
             knowCount++;
             evaluatedCards.push(currentCardIndex);
+            buttonClicked = true; // Marquer que le bouton a été cliqué
+            showCard();
             updateCounters();
         }
     }
@@ -128,18 +136,22 @@ $(document).ready(function () {
         resetCounts();
         revisedCount = 0;
         revisedCountSpan.text(revisedCount);
+        buttonClicked = false; // Réinitialiser la variable
+    
+        // Mise à jour de la carte après la réinitialisation
         updateCard();
         hideCompletionMessage();
         card.removeClass('flipped');
         evaluatedCards = [];
     }
+    
 
     card.on('click', function () {
         card.toggleClass('flipped');
     });
 
     knowBtn.on('click', handleKnowButtonClick);
-    nextBtn.on('click', showNextCard);
+    nextBtn.on('click', showCard);
     reviewBtn.on('click', handleReviewButtonClick);
     resetBtn.on('click', resetButtonClick);
 
