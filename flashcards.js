@@ -57,14 +57,14 @@ function createConfetti() {
     const confettiSettings = { target: 'confetti-canvas', clock: duration };
 
     // Utilisez 'confetti.create' au lieu de 'new confetti.ConfettiGenerator'
-    const confetti = confetti.create(confettiSettings);
-    confetti.render();
+    const confettiInstance = confetti.create(confettiSettings);
+    confettiInstance.render(); // Correction ici
 
     setTimeout(() => {
-        confetti.clear();
+        confettiInstance.clear(); // Correction ici
         console.log('Confetti cleared.'); // Ajout d'un log pour débogage
     }, duration);
-}       
+}   
 
     function hideCompletionMessage() {
         completionMessage.hide();
