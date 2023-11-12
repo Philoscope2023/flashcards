@@ -8,6 +8,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="https://zupimages.net/up/23/45/lau5.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="flashcards.js" defer></script>
@@ -40,11 +41,35 @@
         <p id="completionMessage">Bravo ! Tu as révisé tous les repères au programme !</p>
     </div>
 
+    <button id="downloadButton">
+        <i class="fas fa-download"></i>
+    </button>
+
     <div id="copyright">
         © Philo'Scope 2023
     </div>
 
     <canvas id="confetti-canvas" style="position: fixed; top: 0; left: 0; pointer-events: none;"></canvas>
+    
+    <script>
+        document.getElementById('downloadButton').addEventListener('click', function () {
+            // Remplacez 'chemin/vers/votre/fichier.pdf' par le chemin réel de votre fichier PDF
+            var pdfPath = 'https://drive.google.com/uc?export=download&id=1sV3Vc54Ii4lUNaUJmaAYD7dlKqDyksUZ';
+    
+            // Créez un lien temporaire et définissez l'attribut download
+            var link = document.createElement('a');
+            link.href = pdfPath;
+            link.target = '_blank'; // Ouvre le lien dans un nouvel onglet
+            link.download = 'flashcards_reperes.pdf'; // Spécifie le nom du fichier à télécharger
+    
+            // Simule un clic sur le lien pour déclencher le téléchargement
+            document.body.appendChild(link);
+            link.click();
+    
+            // Supprime le lien temporaire du DOM
+            document.body.removeChild(link);
+        });
+    </script>    
 
 </body>
 
