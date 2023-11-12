@@ -136,10 +136,19 @@ button:hover {
 }
 
 #completionMessage {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-size: 22px;
     font-weight: bold;
     color: #f69d33;
     display: none;
+}
+
+
+#confetti-canvas.hidden {
+    visibility: hidden;
 }
 
 .card.flipped .card-inner {
