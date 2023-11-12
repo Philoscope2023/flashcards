@@ -7,7 +7,6 @@ body {
     justify-content: center;
     height: 100vh;
     background-color: #f8f8f8;
-    user-select: none;
 }
 
 p {
@@ -144,10 +143,6 @@ button:hover {
 }
 
 #completionMessage {
-    position: absolute;
-    top: 90%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     font-size: 22px;
     font-weight: bold;
     color: #f69d33;
@@ -165,9 +160,9 @@ button:hover {
 
 #copyright {
     position: absolute;
-    bottom: 15px;
-    left: 15px;
-    font-size: 11px;
+    bottom: 10px;
+    left: 10px;
+    font-size: 10px;
     font-weight: bold;
     cursor: default;
     font-family: 'Poppins', sans-serif;
