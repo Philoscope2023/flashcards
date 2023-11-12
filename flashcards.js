@@ -77,7 +77,7 @@ $(document).ready(function () {
         { concept: 'Particulier', definition: '' },
         { concept: 'Singulier', definition: '' },
         { concept: 'Vrai', definition: '' },
-        { concept: 'probable', definition: '' },
+        { concept: 'Probable', definition: '' },
         { concept: 'Certain', definition: '' }
     ];
 
