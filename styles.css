@@ -175,8 +175,8 @@ button:hover {
 }
 
 #copyright {
-    position: fixed;
-    bottom: 10px;
+    position: relative;
+    bottom: 12px;
     left: 50%;
     transform: translateX(-50%);
     font-size: 10px;
@@ -185,4 +185,5 @@ button:hover {
     cursor: default;
     font-family: 'Poppins', sans-serif;
     color: #cc9ad0;
+    margin-top: 18px;
 }
