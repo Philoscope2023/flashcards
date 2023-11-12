@@ -119,9 +119,12 @@ $(document).ready(function () {
     }    
     
     function createConfetti() {
-        console.log('Creating confetti...'); // Ajout d'un log pour débogage
+        console.log('Creating confetti...');
     
-        const duration = 10 * 1000; // durée de l'explosion en millisecondes (10 secondes ici)
+        const duration = 10 * 1000;
+    
+        // Ajouter la classe hidden au canvas
+        $('#confetti-canvas').addClass('hidden');
     
         particlesJS("confetti-canvas", {
             particles: {
@@ -138,9 +141,12 @@ $(document).ready(function () {
         setTimeout(() => {
             // Clear the confetti effect
             particlesJS("confetti-canvas", {});
-            console.log('Confetti cleared.'); // Ajout d'un log pour débogage
+            console.log('Confetti cleared.');
+    
+            // Retirer la classe hidden du canvas
+            $('#confetti-canvas').removeClass('hidden');
         }, duration);
-    }       
+    }     
 
     function hideCompletionMessage() {
         completionMessage.hide();
