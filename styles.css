@@ -156,6 +156,23 @@ button:hover {
     transform: rotateY(180deg);
 }
 
+#downloadButton {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    background-color: transparent;
+    color: #3498db;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#downloadButton:hover {
+    background-color: transparent;
+}
+
 #copyright {
     position: fixed;
     bottom: 10px;
