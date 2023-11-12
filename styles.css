@@ -159,10 +159,12 @@ button:hover {
 }
 
 #copyright {
-    position: absolute;
+    position: fixed;
     bottom: 10px;
-    left: 10px;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 10px;
+    letter-spacing: 1px;
     font-weight: bold;
     cursor: default;
     font-family: 'Poppins', sans-serif;
