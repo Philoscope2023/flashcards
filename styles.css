@@ -7,6 +7,7 @@ body {
     justify-content: center;
     height: 100vh;
     background-color: #f8f8f8;
+    user-select: none;
 }
 
 p {
@@ -15,6 +16,11 @@ p {
     margin-block-end: 0.5em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+}
+
+::selection {
+    background-color: #f69d33;
+    color: #fff; /* Couleur du texte lors de la sélection */
 }
 
 #confetti-canvas {
@@ -153,4 +159,15 @@ button:hover {
 
 .card.flipped .card-inner {
     transform: rotateY(180deg);
+}
+
+#copyright {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: default;
+    font-family: 'Poppins', sans-serif;
+    color: #cc9ad0;
 }
